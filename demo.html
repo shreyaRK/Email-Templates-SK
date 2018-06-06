@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="handlebars-v4.0.11.js"></script>
+    <link rel ="stylesheet" href="demo.css">
+    
+</head>
+<body>
+       <!-- HTML -->
+    <div id="div1">  </div>
+    
+    <!-- Handlebars -->
+    <script type="text/javascript">
+    
+var view1 = `<div id="pg1" class="pg">
+         <p> Hello {{{name}}}, As per your subscription this is your listing. <br>
+             The price of your listing has been reduced, have a look: </p> <br>
+         <br> <br>
+         <img id="vehicle_pic" src={{photo}} width=140 >
+             <div id= "vehicle_info">  {{{vehicle}}}
+         <a href={{vehicle_link}}>
+         <img src="http://www.compasstools.com/prospects/images/ViewVehicleDetails.png"> </a>
+            </div>
+         <p> Please let us know what additional information we can provide to help!</p>
+         <p><b> Address:</b><br> {{{address}}}</p> 
+     </div>
+         
+         <div id="pg2" class="pg"> 
+            <img id="map_pic" src={{map_img}}>
+            <div><b> Sales Hours: </b><br> {{{sales_hours}}} </div> <br><br>
+            <div id="t_c"> {{{terms}}}</div>
+         </div>`
+
+var template = Handlebars.compile(view1);
+
+var data = template({name : "<b>Leo</b>",
+                    vehicle: `<b><u> 2009 Mazda CX-9 Touring </u></b> <br><br>
+                                Vehicle <b>Old Price</b>: $10,924 <br>
+                                Vehicle <b>New Price</b>: $9,924 <br>
+                                Vin: JM3TB38VX90178320 <br>
+                                Stock Number: 90178320 <br>
+                                Exterior: Brilliant Black <br>
+                                Interior: Sand <br>
+                                Mileage: 62745 <br> <br>`,
+                    photo : 'http://content.homenetiol.com/2000748/2084722/640x480/55b4f5e261c541f1983d66e1458721c7/5FNYF28577B004040-0.jpg',
+                    vehicle_link : "https://www.autonation.com/404?item=http://www.autonation.com/cars/5fnyf28577b004040?vin=5FNYF28577B004040&phone=5614714821",
+                    address: `Ryan Evans <br>
+                                VIP Manager <br>
+                                561-471-4821 <br>
+                                Lexus of Palm Beach <br>
+                                5700 Okeechobee Blvd. <br>
+                                West Palm Beach, FL 33417 <br>`,
+                    map_img: 'http://az535836.vo.msecnd.net/compassimg/map_2945.jpg',
+                    sales_hours: `Sunday	11:00AM - 5:00PM <br>
+                                Monday	8:30AM - 9:00PM <br>
+                                Tuesday	8:30AM - 9:00PM <br>
+                                Wednesday  	8:30AM - 9:00PM <br>
+                                Thursday	8:30AM - 9:00PM <br>
+                                Friday	8:30AM - 9:00PM <br>
+                                Saturday	8:30AM - 7:00PM <br>`,
+                    terms: `Money-Back Guarantee - Valid for 5 days or 250 miles, whichever comes first. See store for complete guarantee, warranty and service contract details. Transfer fee may apply. <br>
+                            We'll Buy Your Car - Subject to in-store verification, vehicle condition and mileage. Appraisal valid for 7 days or 500 miles, whichever comes first. <br>
+                            AutoNation, and any affiliates or subsidiaries, are not responsible for any data delays or breakdowns in manufacturer or third party reporting systems. See store for details. Some restrictions apply. Some used vehicles may have unrepaired safety recalls.
+                            You can check recall status by VIN at <a href="https://www.safercar.gov/"> https://www.safercar.gov. </a>` });
+
+document.getElementById("div1").innerHTML += data;
+
+    </script>
+
+
+</body>
+</html>

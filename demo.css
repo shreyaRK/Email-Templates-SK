@@ -1,0 +1,28 @@
+
+#vehicle_pic{
+    float: left;
+    height: 170px;
+    width: 215px;
+    margin-right: 5%;
+}
+
+.pg{
+    border: 1px solid black; 
+    margin: 5px;
+    padding: 30px;
+    margin-left: 20%;
+    margin-right: 35%;
+}
+
+#map_pic{
+    float: left;
+    height: 157px;
+    width: 200px;
+    margin: 0px 68px 20px 106px;
+}
+
+#t_c{
+    padding: 10px;
+    color: white;
+    background-color: #333333;
+}
